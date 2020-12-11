@@ -15,18 +15,13 @@ public class NextImageCommand implements Command {
     }
 
     @Override
-    public void execute(){
-        imageDisplay.display(next());
-    }
+    public void execute(){ imageDisplay.display(next()); }
 
-    private Image next() {
-        return images.get(next(getIndex()));
-    }
-    private int next(int index) {
-        return (index+1) % images.size();
-    }
-    private int getIndex() {
-        return images.indexOf(imageDisplay.getImage());
-    }
+    private Image next() { return images.get(nextIndex()); }
+
+    private int nextIndex() { return (getIndex()+1) % images.size(); }
+
+    private int getIndex() { return images.indexOf(imageDisplay.getImage()); }
+
 }
 

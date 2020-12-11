@@ -14,8 +14,6 @@ public class MockImageDisplay implements ImageDisplay {
     }
 
     @Override
-    public Image getImage() {
-        return null;
-    }
+    public Image getImage() { return null; }
 
 }

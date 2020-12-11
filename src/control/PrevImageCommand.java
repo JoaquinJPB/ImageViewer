@@ -15,17 +15,11 @@ public class PrevImageCommand implements Command {
     }
 
     @Override
-    public void execute(){
-        imageDisplay.display(prev());
-    }
+    public void execute(){ imageDisplay.display(prev()); }
 
-    private Image prev() {
-        return images.get(prev(getIndex()));
-    }
-    private int prev(int index) {
-        return (index - 1 + images.size()) % images.size();
-    }
-    private int getIndex() {
-        return images.indexOf(imageDisplay.getImage());
-    }
+    private Image prev() { return images.get(prevIndex()); }
+
+    private int prevIndex() { return (getIndex() - 1 + images.size()) % images.size(); }
+
+    private int getIndex() { return images.indexOf(imageDisplay.getImage()); }
 }

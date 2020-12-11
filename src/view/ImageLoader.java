@@ -4,6 +4,4 @@ import model.Image;
 
 import java.util.List;
 
-public interface ImageLoader {
-    List<Image> load();
-}
+public interface ImageLoader { List<Image> load(); }
